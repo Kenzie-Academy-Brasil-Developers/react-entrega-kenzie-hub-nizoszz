@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
+export const RegisterWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const RegisterPageContainer = styled.div`
-  margin-top: 4.8rem;
+  padding-top: 10rem;
   width: 36.9rem;
   display: flex;
   flex-direction: column;

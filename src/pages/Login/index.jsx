@@ -3,13 +3,13 @@ import { LoginForm } from "../../components/Form/LoginForm";
 import { ButtonStyled } from "../../styles/button";
 import { Container } from "../../styles/container";
 import { StyledText, StyledTitle } from "../../styles/typography";
-import { LoginFormContainer, LoginPageContainer } from "./style";
+import { LoginFormContainer, LoginPageContainer, LoginWrapper } from "./style";
 export const LoginPage = ({ navigate, userLogin }) => {
   const handleRedirect = () => {
     navigate("/register");
   };
   return (
-    <>
+    <LoginWrapper>
       <Container>
         <LoginPageContainer>
           <img src={LogoDesktop} alt="Kenzie Hub" />
@@ -40,6 +40,6 @@ export const LoginPage = ({ navigate, userLogin }) => {
           </LoginFormContainer>
         </LoginPageContainer>
       </Container>
-    </>
+    </LoginWrapper>
   );
 };

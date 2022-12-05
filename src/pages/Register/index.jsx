@@ -3,6 +3,7 @@ import {
   HeaderDiv,
   RegisterFormContainer,
   RegisterPageContainer,
+  RegisterWrapper,
 } from "./style";
 import LogoDesktop from "../../assets/img/LogoDesktop.svg";
 import { RegisterForm } from "../../components/Form/RegisterForm";
@@ -15,7 +16,7 @@ export const RegisterPage = ({ userRegister, navigate }) => {
   };
 
   return (
-    <>
+    <RegisterWrapper>
       <Container>
         <RegisterPageContainer>
           <HeaderDiv>
@@ -44,6 +45,6 @@ export const RegisterPage = ({ userRegister, navigate }) => {
           </RegisterFormContainer>
         </RegisterPageContainer>
       </Container>
-    </>
+    </RegisterWrapper>
   );
 };
