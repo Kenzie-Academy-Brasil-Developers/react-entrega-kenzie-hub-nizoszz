@@ -9,8 +9,11 @@ import LogoDesktop from "../../assets/img/LogoDesktop.svg";
 import { RegisterForm } from "../../components/Form/RegisterForm";
 import { StyledText, StyledTitle } from "../../styles/typography";
 import { ButtonStyled } from "../../styles/button";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
-export const RegisterPage = ({ userRegister, navigate }) => {
+export const RegisterPage = () => {
+  const { navigate } = useContext(AuthContext);
   const handleReturn = () => {
     navigate("");
   };
@@ -26,7 +29,7 @@ export const RegisterPage = ({ userRegister, navigate }) => {
               buttonStyle="defaultButtonSmall"
               onClick={handleReturn}
             >
-              Voltar
+              Back
             </ButtonStyled>
           </HeaderDiv>
           <RegisterFormContainer>
@@ -36,12 +39,12 @@ export const RegisterPage = ({ userRegister, navigate }) => {
               color="#F8F9FA"
               textAlign="center"
             >
-              Crie sua conta
+              Create your account
             </StyledTitle>
             <StyledText tag="Headline" color="#868E96" textAlign="center">
-              Rapido e grátis, vamos nessa
+              Fast and free, let's go!
             </StyledText>
-            <RegisterForm userRegister={userRegister} />
+            <RegisterForm />
           </RegisterFormContainer>
         </RegisterPageContainer>
       </Container>

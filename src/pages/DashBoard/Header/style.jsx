@@ -14,5 +14,5 @@ export const HeaderContentContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 0rem 1.2rem;
-  gap: 1rem;
+  gap: 7rem;
 `;

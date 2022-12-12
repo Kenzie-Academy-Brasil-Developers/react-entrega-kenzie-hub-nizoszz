@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
-export const ProtectedRoute = ({ user }) => {
-  const navigate = useNavigate();
+export const ProtectedRoute = () => {
+  const { navigate, user } = useContext(AuthContext);
   useEffect(() => {
     if (!user) {
-      navigate("");
+      navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return <>{user && <Outlet />}</>;
+  return <>{user ? <Outlet /> : <span>Loading...</span>}</>;
 };

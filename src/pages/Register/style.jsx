@@ -10,6 +10,7 @@ export const RegisterWrapper = styled.div`
 
 export const RegisterPageContainer = styled.div`
   padding-top: 10rem;
+  height: 100vh;
   width: 36.9rem;
   display: flex;
   flex-direction: column;

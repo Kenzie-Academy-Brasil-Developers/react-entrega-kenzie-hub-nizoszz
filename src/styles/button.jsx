@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 export const ButtonStyled = styled.button`
   font-weight: ${({ weigth }) => weigth};
+  font-size: ${({ fontSize }) => fontSize};
   ${({ buttonStyle }) => {
     switch (buttonStyle) {
       default:
@@ -59,7 +60,6 @@ export const ButtonStyled = styled.button`
         `;
       case "defaultButtonSmall":
         return css`
-          width: 6.7rem;
           height: 4.8rem;
           padding: 0rem 1.6rem;
           text-align: center;
@@ -71,6 +71,38 @@ export const ButtonStyled = styled.button`
           &&:hover {
             background-color: var(--color-grey1);
             border: 0.1rem solid var(--color-grey1);
+          }
+        `;
+      case "buttonPlus":
+        return css`
+          width: 3.2rem;
+          height: 3.2rem;
+          /* padding: 1.1rem; */
+          text-align: center;
+          background-color: var(--color-grey3);
+          color: var(--color-grey0);
+          border: 0.1rem solid var(--color-grey3);
+          border-radius: 0.4rem;
+          cursor: pointer;
+          &&:hover {
+            background-color: var(--color-grey1);
+            border: 0.1rem solid var(--color-grey1);
+          }
+        `;
+      case "greyButtonDelete":
+        return css`
+          height: 4.8rem;
+          width: 100%;
+          max-width: 9.8rem;
+          padding: 0rem 1.6rem;
+          text-align: center;
+          background-color: var(--color-grey1);
+          color: var(--color-grey0);
+          border: 0.1rem solid var(--color-grey1);
+          border-radius: 0.4rem;
+          cursor: pointer;
+          &&:hover {
+            opacity: 0.7;
           }
         `;
     }

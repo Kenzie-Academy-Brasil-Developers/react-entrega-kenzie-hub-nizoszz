@@ -1,5 +1,5 @@
 import { OptionStyled } from "./style";
 
-export const OptionSelectModule = ({ value, children }) => {
+export const OptionSelect = ({ value, children }) => {
   return <OptionStyled value={value}>{children}</OptionStyled>;
 };

@@ -4,10 +4,12 @@ import { Input } from "../Input";
 import { ErrorParagraph, FormLoginStyled } from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "./loginSchema";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 
-export const LoginForm = ({ userLogin }) => {
+export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
+  const { userLogin } = useContext(AuthContext);
 
   const {
     register,
@@ -27,7 +29,7 @@ export const LoginForm = ({ userLogin }) => {
         id="email"
         label="E-mail"
         type="email"
-        placeholder="Digite aqui seu email"
+        placeholder="Enter your e-mail"
         register={register("email")}
         disabled={loading}
       />
@@ -36,7 +38,7 @@ export const LoginForm = ({ userLogin }) => {
         id="password"
         label="Senha"
         type="password"
-        placeholder="Digite aqui sua senha"
+        placeholder="Enter your password"
         register={register("password")}
         disabled={loading}
       />
@@ -44,7 +46,7 @@ export const LoginForm = ({ userLogin }) => {
         <ErrorParagraph>{errors.password.message}</ErrorParagraph>
       )}
       <ButtonStyled type="submit" buttonStyle disabled={loading}>
-        {loading ? "Entrando" : "Entrar"}
+        {loading ? "Logging in..." : "Log in"}
       </ButtonStyled>
     </FormLoginStyled>
   );

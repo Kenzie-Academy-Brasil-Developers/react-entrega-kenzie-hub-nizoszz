@@ -14,4 +14,14 @@ export const MainContentContainer = styled.div`
   width: 100%;
   padding: 0rem 1.2rem;
   gap: 2.3rem;
+
+  && div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  && ul {
+    
+  }
 `;

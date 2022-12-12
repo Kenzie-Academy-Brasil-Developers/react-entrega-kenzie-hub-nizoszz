@@ -2,8 +2,11 @@ import { ButtonStyled } from "../../../styles/button";
 import { Container } from "../../../styles/container";
 import { NavContentContainer, NavStyle } from "./style";
 import LogoDesktop from "../../../assets/img/LogoDesktop.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 
-export const Navbar = ({ userLogout }) => {
+export const Navbar = () => {
+  const { userLogout } = useContext(AuthContext);
   return (
     <NavStyle>
       <Container>

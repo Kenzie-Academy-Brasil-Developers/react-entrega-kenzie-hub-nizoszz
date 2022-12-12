@@ -5,6 +5,7 @@ import { App } from "./App";
 import { BrowserRouter } from "react-router-dom";
 import Global from "./styles/global";
 import { Reset } from "./styles/reset";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <React.StrictMode>
       <Global />
       <Reset />
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </React.StrictMode>
   </BrowserRouter>
 );

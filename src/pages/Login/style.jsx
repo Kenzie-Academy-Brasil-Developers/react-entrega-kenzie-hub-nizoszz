@@ -10,6 +10,7 @@ export const LoginWrapper = styled.div`
 
 export const LoginPageContainer = styled.div`
   width: 36.9rem;
+  align-self: center;
   display: flex;
   flex-direction: column;
   gap: 3.6rem;

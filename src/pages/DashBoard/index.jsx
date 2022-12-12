@@ -1,12 +1,18 @@
+import { useContext } from "react";
+import { Modal } from "../../components/Modal";
+import { TechContext } from "../../contexts/TechContext";
 import { Header } from "./Header";
 import { Main } from "./Main";
 import { Navbar } from "./Navbar";
 
-export const DashBoard = ({ userLogout, user }) => {
+export const DashBoard = () => {
+  const { modal } = useContext(TechContext);
+
   return (
     <>
-      <Navbar userLogout={userLogout} />
-      <Header user={user} />
+      {modal && <Modal />}
+      <Navbar />
+      <Header />
       <Main />
     </>
   );

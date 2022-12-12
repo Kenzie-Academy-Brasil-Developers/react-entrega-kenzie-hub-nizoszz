@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import LogoDesktop from "../../assets/img/LogoDesktop.svg";
 import { LoginForm } from "../../components/Form/LoginForm";
+import { AuthContext } from "../../contexts/AuthContext";
 import { ButtonStyled } from "../../styles/button";
 import { Container } from "../../styles/container";
 import { StyledText, StyledTitle } from "../../styles/typography";
 import { LoginFormContainer, LoginPageContainer, LoginWrapper } from "./style";
-export const LoginPage = ({ navigate, userLogin }) => {
+export const LoginPage = () => {
+  const { navigate } = useContext(AuthContext);
+
   const handleRedirect = () => {
     navigate("/register");
   };
@@ -22,20 +26,20 @@ export const LoginPage = ({ navigate, userLogin }) => {
             >
               Login
             </StyledTitle>
-            <LoginForm userLogin={userLogin} />
+            <LoginForm />
             <StyledText
               tag="HeadlineBold"
               titleStyle="HeadlineBold"
               color="#868E96"
               textAlign="center"
             >
-              Ainda não possui uma conta?
+              Don't have an account yet?
             </StyledText>
             <ButtonStyled
               buttonStyle="greyButtonDefault"
               onClick={handleRedirect}
             >
-              Cadastra-se
+              Sign up
             </ButtonStyled>
           </LoginFormContainer>
         </LoginPageContainer>

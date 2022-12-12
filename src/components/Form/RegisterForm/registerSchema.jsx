@@ -2,34 +2,34 @@ import * as yup from "yup";
 export const RegisterSchema = yup.object().shape({
   name: yup
     .string()
-    .required("Insira seu nome")
-    .min(3, "O nome deve conter no mínimo três caracteres"),
+    .required("Enter your name")
+    .min(3, "Your name must contain at least three characters"),
   email: yup
     .string()
-    .required("Insira seu e-mail")
-    .email("Digite um e-mail válido"),
+    .required("Enter your e-mail")
+    .email("Enter a valid e-mail"),
   password: yup
     .string()
-    .required("Insira sua senha")
+    .required("Enter your password")
     .matches(
       /(?=.*?[A-Z])/,
-      "A senha deve conter no mínimo uma letra maiúscula."
+      "Your password must contain at least one upper case letter"
     )
     .matches(
       /(?=.*?[a-z])/,
-      "A senha deve conter no mínimo uma letra minúscula."
+      "Your password must contain at least one lower case letter"
     )
-    .matches(/(?=.*?[0-9])/, "A senha deve conter no mínimo um número.")
+    .matches(/(?=.*?[0-9])/, "Your password must contain at least one number")
     .matches(
       /(?=.*?[#?!@$%^&*-])/,
-      "A senha deve conter no mínimo um caractere especial"
+      "Your password must contain at least one special character"
     )
-    .min(8, "A senha deve conter no mínimo 8 caracteres"),
+    .min(8, "Your password must contain a minimum of eigth characters"),
   passwordConfirmation: yup
     .string()
-    .required("A confirmação da senha é necessária")
-    .oneOf([yup.ref("password")], "As senhas devem ser correspondentes"),
-  bio: yup.string().required("Fale um pouco sobre você"),
-  contact: yup.string().required("Insira um meio de contato"),
-  course_module: yup.string().required("Selecione um módulo do curso"),
+    .required("Confirmation your password required")
+    .oneOf([yup.ref("password")], "Passwords must match"),
+  bio: yup.string().required("Talk about you"),
+  contact: yup.string().required("Enter your contact"),
+  course_module: yup.string().required("Select a course module"),
 });

@@ -1,15 +1,17 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 import { Container } from "../../../styles/container";
 import { StyledText, StyledTitle } from "../../../styles/typography";
 import { HeaderContentContainer, HeaderStyled } from "./style";
 
-export const Header = ({ user }) => {
-  console.log(user.user.name);
+export const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <HeaderStyled>
       <Container>
         <HeaderContentContainer>
           <StyledTitle tag="Title1" color="#F8F9FA">
-            Olá, {user.user.name}
+            Olá, {user.name}
           </StyledTitle>
           <StyledText
             tag="HeadlineBold"
@@ -17,7 +19,7 @@ export const Header = ({ user }) => {
             color="#868E96"
             alignSelf="center"
           >
-            {user.user.course_module}
+            {user.course_module}
           </StyledText>
         </HeaderContentContainer>
       </Container>
